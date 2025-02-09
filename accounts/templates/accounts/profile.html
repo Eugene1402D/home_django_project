@@ -1,0 +1,20 @@
+{% extends 'base/base.html' %}
+
+{% block title %}Профиль{% endblock %}
+
+{% block content %}
+<h1>Профиль</h1>
+<p>Добро пожаловать, {{ user.username }}!</p>
+<form method="post" action="{% url 'book_room' %}">
+    {% csrf_token %}
+    <label for="hotel_name">Наименование отеля:</label>
+    <input type="text" id="hotel_name" name="hotel_name" required>
+    <label for="room_type">Тип номера:</label>
+    <input type="text" id="room_type" name="room_type" required>
+    <label for="check_in_date">Дата въезда:</label>
+    <input type="date" id="check_in_date" name="check_in_date" required>
+    <label for="check_out_date">Дата убытия:</label>
+    <input type="date" id="check_out_date" name="check_out_date" required>
+    <button type="submit">Забронировать</button>
+</form>
+{% endblock %}

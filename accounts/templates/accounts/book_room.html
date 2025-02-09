@@ -1,0 +1,20 @@
+{% extends 'base/base.html' %}
+{% block title %}Бронирование номеров{% endblock %}
+
+{% block content %}
+<h2 class="my-4">Бронирование номеров</h2>
+{% if user.is_authenticated %}
+    <form method="post">
+        {% csrf_token %}
+        <!-- Поля формы бронирования номеров -->
+        <div class="form-group">
+            <label for="room_id">Номер комнаты:</label>
+            <input type="text" class="form-control" id="room_id" name="room_id" required>
+        </div>
+        <button type="submit" class="btn btn-primary">Забронировать</button>
+    </form>
+{% else %}
+    <p>Бронирование номеров доступно только зарегистрированным пользователям!</p>
+    <a href="{% url 'register' %}" class="btn btn-primary">Зарегистрироваться</a>
+{% endif %}
+{% endblock %}

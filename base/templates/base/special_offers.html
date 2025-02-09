@@ -1,0 +1,20 @@
+{% extends 'base/base.html' %}
+{% load static %}
+
+{% block title %}Специальные предложения{% endblock %}
+
+{% block content %}
+<h2>Специальные предложения</h2>
+<ul>
+    {% for offer in special_offers %}
+        <li>
+            <h3>{{ offer.title }}</h3>
+            <p>{{ offer.description }}</p>
+            <p>Действует с {{ offer.start_date }} по {{ offer.end_date }}</p>
+            {% if offer.image %}
+                <img src="{{ offer.image.url }}" alt="{{ offer.title }}">
+            {% endif %}
+        </li>
+    {% endfor %}
+</ul>
+{% endblock %}

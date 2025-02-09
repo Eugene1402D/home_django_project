@@ -1,0 +1,23 @@
+{% extends 'base/base.html' %}
+{% load static %}
+
+{% block title %}{{ room.name }}{% endblock %}
+
+{% block content %}
+<header>
+    <h1>{{ room.name }}</h1>
+</header>
+<main>
+    <p>{{ room.description }}</p>
+    <p>Цена: {{ room.price }} руб.</p>
+    {% if room.image %}
+        <img src="{{ room.image.url }}" alt="{{ room.name }}">
+    {% else %}
+        <img src="{% static 'static/images/2024-04-15_11-35-57-HEIC.jpeg' %}" alt="Изображение по умолчанию">
+    {% endif %}
+    <br><a href="{% url 'room_list' %}">Вернуться к списку номеров</a>
+</main>
+<footer>
+    <p>&copy; 2025 Ваш сайт</p>
+</footer>
+{% endblock %}
