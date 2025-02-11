@@ -6,7 +6,6 @@ class Review(models.Model):
     review_text = models.TextField(verbose_name="Текст отзыва")
     rating = models.IntegerField(verbose_name="Оценка")
     created_at = models.DateTimeField(auto_now_add=True, verbose_name="Дата создания")
-    # auto_now_add=True - устанавливает текущую дату и время при создании объекта
 
     class Meta:
         verbose_name = "Отзыв"

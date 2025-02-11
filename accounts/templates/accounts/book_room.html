@@ -6,7 +6,6 @@
 {% if user.is_authenticated %}
     <form method="post">
         {% csrf_token %}
-        <!-- Поля формы бронирования номеров -->
         <div class="form-group">
             <label for="room_id">Номер комнаты:</label>
             <input type="text" class="form-control" id="room_id" name="room_id" required>
