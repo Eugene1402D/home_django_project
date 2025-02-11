@@ -12,3 +12,4 @@ class SpecialOfferAdmin(admin.ModelAdmin):
 """Регистрирует модель SpecialOffer и настраивает её представление с помощью класса SpecialOfferAdmin
 в административной панели Django"""
 admin.site.register(SpecialOffer, SpecialOfferAdmin)
+admin.site.register(GalleryImage)

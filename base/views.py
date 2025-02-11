@@ -22,11 +22,7 @@ def special_offers(request):
     )  # Использует render для отображения шаблона special_offers.html и передачи в него контекста
 
 
-def gallery(request):
+def gallery_list(request):
     gallery_images = GalleryImage.objects.all()  # Извлекает все объекты GalleryImage из базы данных и сохраняет их в переменную gallery_images
-    # словарь context, содержащий специальные предложения и изображения галереи, которые будут переданы в шаблон
-    context = {
-        "gallery_images": gallery_images,
-    }
-    return render(request, "base/gallery.html",
-                  context)
+    return render(request, "base/gallery_list.html", {"gallery_images": gallery_images})
+
