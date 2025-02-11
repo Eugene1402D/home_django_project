@@ -7,7 +7,7 @@ class SpecialOffer(models.Model):
     start_date = models.DateField(verbose_name="Дата начала")
     end_date = models.DateField(verbose_name="Дата окончания")
     image = models.ImageField(
-        upload_to="special_offers/", verbose_name="Изображение акции"
+        upload_to="special_offers/", verbose_name="Изображение акции"  # upload_to="special_offers/" (папка для загрузки изображений)
     )
 
     def __str__(self):
@@ -22,7 +22,7 @@ class SpecialOffer(models.Model):
 class GalleryImage(models.Model):
     title = models.CharField(max_length=200, verbose_name="Название изображения")
     description = models.TextField(verbose_name="Описание изображения")
-    image = models.ImageField(upload_to="gallery/", verbose_name="Изображение")
+    image = models.ImageField(upload_to="gallery/", verbose_name="Изображение")  # upload_to="gallery/" (папка для загрузки изображений)
 
     def __str__(self):
         return self.title

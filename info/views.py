@@ -1,8 +1,9 @@
 from django.shortcuts import render
 
 
-def about(request):
-    return render(request, "info/about.html")
+# Это представление обрабатывает запросы на страницу "О нас" (about)
+def about(request):  # Функция about принимает объект запроса (request)
+    return render(request, "info/about.html")  # Функция render отображает шаблон info/about.html
 
 
 def contact(request):
