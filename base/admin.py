@@ -8,5 +8,6 @@ class SpecialOfferAdmin(admin.ModelAdmin):
     search_fields = ("title", "start_date")
     list_filter = ("start_date",)
 
+
 admin.site.register(SpecialOffer, SpecialOfferAdmin)
 admin.site.register(GalleryImage)

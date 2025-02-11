@@ -22,4 +22,3 @@ def special_offers(request):
 def gallery_list(request):
     gallery_images = GalleryImage.objects.all()
     return render(request, "base/gallery_list.html", {"gallery_images": gallery_images})
-
