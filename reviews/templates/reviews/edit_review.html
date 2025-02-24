@@ -4,13 +4,13 @@
 {% block content %}
 <h2 class="my-4">Редактировать отзыв</h2>
 {% if user.is_authenticated %}
-    <form method="post">
-        {% csrf_token %}
-        {{ form.as_p }}
-        <button type="submit" class="btn btn-primary">Сохранить</button>
-    </form>
+<form method="post">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <button type="submit" class="btn btn-primary">Сохранить</button>
+</form>
 {% else %}
-    <p>Отзывы могут редактировать только зарегистрированные пользователи!</p>
-    <a href="{% url 'login' %}">Войти</a> или <a href="{% url 'register' %}">Зарегистрироваться</a>
+<p>Отзывы могут редактировать только зарегистрированные пользователи!</p>
+<a href="{% url 'login' %}">Войти</a> или <a href="{% url 'register' %}">Зарегистрироваться</a>
 {% endif %}
 {% endblock %}

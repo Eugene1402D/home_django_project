@@ -57,3 +57,4 @@ def book_room(request):
         messages.success(request, 'Номер успешно забронирован!')
         return redirect('profile')
     return render(request, 'accounts/book_room.html')
+

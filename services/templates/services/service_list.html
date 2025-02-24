@@ -1,18 +1,17 @@
 {% extends 'base/base.html' %}
-
 {% block title %}Список услуг{% endblock %}
 
 {% block content %}
 <h1>Список услуг</h1>
 <ul>
     {% for service in services %}
-        <li>
-            <strong>{{ service.title }}</strong>: {{ service.description }}
-            <br>Цена: {{ service.price }} руб.
-            {% if service.image %}
-                <br><img src="{{ service.image.url }}" alt="{{ service.title }}" width="200">
-            {% endif %}
-        </li>
+    <li>
+        <strong>{{ service.title }}</strong>: {{ service.description }}
+        <br>Цена: {{ service.price }} руб.
+        {% if service.image %}
+        <br><img src="{{ service.image.url }}" alt="{{ service.title }}" width="200">
+        {% endif %}
+    </li>
     {% endfor %}
 </ul>
 {% if not services %}

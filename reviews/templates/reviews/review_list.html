@@ -6,16 +6,16 @@
 <h2>Все отзывы</h2>
 <ul>
     {% for review in reviews %}
-        <li>
-            <p><strong>{{ review.user_name }}</strong> ({{ review.rating }}/5): {{ review.review_text }}</p>
-            <p>Оставлен: {{ review.created_at }}</p>
-            {% if review.user_name == user.username %}
-                <a href="{% url 'edit_review' review.id %}">Редактировать</a> |
-                <a href="{% url 'delete_review' review.id %}">Удалить</a>
-            {% endif %}
-        </li>
+    <li>
+        <p><strong>{{ review.user_name }}</strong> ({{ review.rating }}/5): {{ review.review_text }}</p>
+        <p>Оставлен: {{ review.created_at }}</p>
+        {% if review.user_name == user.username %}
+        <a href="{% url 'edit_review' review.id %}">Редактировать отзыв</a> |
+        <a href="{% url 'delete_review' review.id %}">Удалить отзыв</a>
+        {% endif %}
+    </li>
     {% empty %}
-        <li>Отзывы отсутствуют.</li>
+    <li>Отзывы отсутствуют</li>
     {% endfor %}
 </ul>
 <a href="{% url 'add_review' %}" class="btn btn-primary mb-3">Добавить отзыв</a>

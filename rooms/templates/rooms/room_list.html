@@ -10,11 +10,11 @@
 <main>
     <ul>
         {% for room in rooms %}
-            <li>
-                <strong>{{ room.name }}</strong>: {{ room.description }}
-                <br>Цена: {{ room.price }} руб.
-                <br><a href="{% url 'room_detail' room.id %}">Подробнее</a>
-            </li>
+        <li>
+            <strong>{{ room.name }}</strong>: {{ room.description }}
+            <br>Цена: {{ room.price }} руб.
+            <br><a href="{% url 'room_detail' room.id %}">Подробнее</a>
+        </li>
         {% endfor %}
     </ul>
 </main>

@@ -21,3 +21,4 @@ class UserRegistrationForm(forms.ModelForm):
 class UserLoginForm(AuthenticationForm):
     username = forms.CharField(label="Имя пользователя")
     password = forms.CharField(label="Пароль", widget=forms.PasswordInput)
+
